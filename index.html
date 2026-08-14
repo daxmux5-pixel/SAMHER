@@ -1,0 +1,946 @@
+<style>
+.samher{
+  --bg:#070707;
+  --card:#111111;
+  --card2:#171717;
+  --gold:#d6a63a;
+  --gold2:#f4d477;
+  --white:#f7f3eb;
+  --muted:#aaa59c;
+  --line:#29251f;
+  --green:#25d366;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--white);
+  width:100%;
+  overflow:hidden;
+}
+
+.samher *{box-sizing:border-box}
+
+.samher a{text-decoration:none}
+
+.samher .container{
+  width:min(1150px,92%);
+  margin:auto;
+}
+
+/* HEADER */
+
+.samher-header{
+  padding:18px 0;
+  background:#080808;
+  border-bottom:1px solid var(--line);
+}
+
+.samher-nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.samher-brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-family:Georgia,serif;
+  font-size:21px;
+  letter-spacing:3px;
+  color:var(--white);
+}
+
+.samher-brand img{
+  width:48px;
+  height:48px;
+  object-fit:contain;
+  border-radius:50%;
+}
+
+.samher-wa-small{
+  background:var(--green);
+  color:white!important;
+  padding:11px 16px;
+  border-radius:9px;
+  font-weight:bold;
+  font-size:13px;
+}
+
+/* HERO */
+
+.samher-hero{
+  padding:80px 20px;
+  background:
+  radial-gradient(circle at 80% 25%,rgba(214,166,58,.18),transparent 30%),
+  linear-gradient(135deg,#070707,#15120d);
+}
+
+.samher-hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+
+.samher-kicker{
+  color:var(--gold2);
+  font-size:11px;
+  font-weight:bold;
+  letter-spacing:4px;
+  margin-bottom:18px;
+}
+
+.samher h1{
+  font-family:Georgia,serif;
+  font-size:clamp(48px,7vw,82px);
+  line-height:.94;
+  font-weight:500;
+  margin:0 0 24px;
+}
+
+.samher h1 span{color:var(--gold2)}
+
+.samher-hero p{
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.7;
+  max-width:520px;
+  margin-bottom:27px;
+}
+
+.samher-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.samher-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 20px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:bold;
+  transition:.2s;
+}
+
+.samher-btn:hover{
+  transform:translateY(-3px);
+}
+
+.samher-gold{
+  background:var(--gold);
+  color:#171107!important;
+}
+
+.samher-green{
+  background:var(--green);
+  color:white!important;
+}
+
+.samher-dark{
+  background:#171717;
+  border:1px solid #3d3528;
+  color:white!important;
+}
+
+.samher-payment{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:20px;
+}
+
+.samher-payment span{
+  background:#17130c;
+  border:1px solid #59451e;
+  color:#f0d184;
+  padding:8px 13px;
+  border-radius:25px;
+  font-size:12px;
+  font-weight:bold;
+}
+
+/* HERO IMAGE */
+
+.samher-hero-img{
+  border:1px solid #4d3c20;
+  border-radius:24px;
+  overflow:hidden;
+  background:#050505;
+}
+
+.samher-hero-img img{
+  width:100%;
+  height:500px;
+  object-fit:cover;
+  display:block;
+}
+
+/* SECTIONS */
+
+.samher-section{
+  padding:85px 20px;
+}
+
+.samher-title{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.samher-title small{
+  color:var(--gold2);
+  font-size:11px;
+  font-weight:bold;
+  letter-spacing:3px;
+}
+
+.samher-title h2{
+  font-family:Georgia,serif;
+  font-size:clamp(35px,5vw,48px);
+  font-weight:500;
+  margin:8px 0;
+}
+
+.samher-title p{
+  color:var(--muted);
+}
+
+/* PRODUCTS */
+
+.samher-products{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.samher-product{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:22px;
+  overflow:hidden;
+  transition:.25s;
+}
+
+.samher-product:hover{
+  transform:translateY(-5px);
+  border-color:#9d7628;
+}
+
+.samher-product-img{
+  width:100%;
+  height:370px;
+  object-fit:cover;
+  display:block;
+}
+
+.samher-product-info{
+  padding:24px;
+}
+
+.samher-product-info small{
+  color:var(--gold2);
+  font-size:10px;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+
+.samher-product-info h3{
+  font-family:Georgia,serif;
+  font-size:29px;
+  font-weight:500;
+  margin:8px 0;
+}
+
+.samher-product-info p{
+  color:var(--muted);
+  line-height:1.7;
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+/* CATEGORIES */
+
+.samher-categories{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:12px;
+}
+
+.samher-category{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:25px 10px;
+  text-align:center;
+}
+
+.samher-category-icon{
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.samher-category h3{
+  font-size:14px;
+  margin:0 0 5px;
+}
+
+.samher-category p{
+  color:var(--muted);
+  font-size:11px;
+}
+
+/* SERVICES */
+
+.samher-services{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.samher-service{
+  background:linear-gradient(145deg,#171717,#101010);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:32px 27px;
+}
+
+.samher-service-icon{
+  font-size:34px;
+  margin-bottom:14px;
+}
+
+.samher-service h3{
+  font-family:Georgia,serif;
+  font-size:27px;
+  font-weight:500;
+  margin-bottom:10px;
+}
+
+.samher-service p{
+  color:var(--muted);
+  line-height:1.7;
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+/* IDEA */
+
+.samher-idea{
+  padding:90px 20px;
+  text-align:center;
+  background:
+  radial-gradient(circle at 50% 0,rgba(214,166,58,.2),transparent 45%),
+  #101010;
+  border-block:1px solid var(--line);
+}
+
+.samher-idea h2{
+  font-family:Georgia,serif;
+  font-size:clamp(38px,6vw,62px);
+  line-height:1;
+  font-weight:500;
+  margin:0 0 18px;
+}
+
+.samher-idea p{
+  color:var(--muted);
+  max-width:650px;
+  margin:0 auto 28px;
+  line-height:1.7;
+}
+
+/* FOOTER */
+
+.samher-footer{
+  text-align:center;
+  background:#050505;
+  padding:35px 20px;
+  color:#777;
+  font-size:12px;
+}
+
+.samher-footer-name{
+  color:var(--gold2);
+  font-family:Georgia,serif;
+  font-size:23px;
+  letter-spacing:4px;
+  margin-bottom:8px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+  .samher-hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .samher-products{
+    grid-template-columns:1fr;
+  }
+
+  .samher-services{
+    grid-template-columns:1fr;
+  }
+
+  .samher-categories{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:550px){
+
+  .samher-section{
+    padding:60px 15px;
+  }
+
+  .samher-hero{
+    padding:55px 15px;
+  }
+
+  .samher-hero-img img{
+    height:360px;
+  }
+
+  .samher-product-img{
+    height:300px;
+  }
+
+  .samher-brand{
+    font-size:17px;
+  }
+
+}
+</style>
+
+
+<div class="samher">
+
+
+<!-- ==============================
+     HEADER
+============================== -->
+
+<header class="samher-header">
+
+<div class="samher-container samher-nav">
+
+<a class="samher-brand">
+
+<img
+src="https://drive.google.com/thumbnail?id=1Fn_qwsxRONPqKfIde4HvplDX6_ZlprtQ&sz=w200"
+alt="SAMHER">
+
+<span>SAMHER</span>
+
+</a>
+
+<a
+class="samher-wa-small"
+href="https://wa.me/573241138293?text=Hola%20SAMHER,%20quiero%20conocer%20sus%20productos."
+target="_blank">
+
+💬 WhatsApp
+
+</a>
+
+</div>
+
+</header>
+
+
+<!-- ==============================
+     HERO
+============================== -->
+
+<section class="samher-hero">
+
+<div class="samher-container">
+
+<div class="samher-hero-grid">
+
+
+<div>
+
+<div class="samher-kicker">
+SAMHER · MUEBLES & HOGAR
+</div>
+
+<h1>
+Tu espacio.<br>
+<span>Tu estilo.</span><br>
+Tu hogar.
+</h1>
+
+<p>
+Muebles que combinan comodidad, diseño y personalidad
+para transformar cada rincón de tu hogar.
+</p>
+
+<div class="samher-buttons">
+
+<a
+class="samher-btn samher-green"
+href="https://wa.me/573241138293?text=Hola%20SAMHER,%20quiero%20conocer%20sus%20muebles."
+target="_blank">
+
+💬 Hablar por WhatsApp
+
+</a>
+
+<a
+class="samher-btn samher-dark"
+href="#productos-samher">
+
+Ver productos
+
+</a>
+
+</div>
+
+<div class="samher-payment">
+
+<span>✓ Pago contra entrega</span>
+
+<span>✓ Atención personalizada</span>
+
+</div>
+
+</div>
+
+
+<div class="samher-hero-img">
+
+<img
+src="https://drive.google.com/thumbnail?id=1bUujuaLvS8Iw5vU9jUa1AoLyYzEwv2yh&sz=w1000"
+alt="Sillón SAMHER">
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     PRODUCTOS
+============================== -->
+
+<section
+class="samher-section"
+id="productos-samher">
+
+<div class="samher-container">
+
+<div class="samher-title">
+
+<small>NUESTROS PRODUCTOS</small>
+
+<h2>Muebles para cada espacio</h2>
+
+<p>
+Diseño, comodidad y calidad para tu hogar.
+</p>
+
+</div>
+
+
+<div class="samher-products">
+
+
+<!-- CHESTER -->
+
+<article class="samher-product">
+
+<img
+class="samher-product-img"
+src="https://drive.google.com/thumbnail?id=1NgoWJnP6jENMN-NUWU_qifQzbNmuJ6KW&sz=w1000"
+alt="Juego Chester">
+
+<div class="samher-product-info">
+
+<small>JUEGO CHESTER</small>
+
+<h3>Elegancia que destaca</h3>
+
+<p>
+Un clásico que aporta personalidad,
+sofisticación y comodidad a tu sala.
+</p>
+
+<a
+class="samher-btn samher-gold"
+href="https://wa.me/573241138293?text=Hola%20SAMHER,%20me%20interesa%20el%20juego%20Chester."
+target="_blank">
+
+Consultar
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- SILLÓN -->
+
+<article class="samher-product">
+
+<img
+class="samher-product-img"
+src="https://drive.google.com/thumbnail?id=1bUujuaLvS8Iw5vU9jUa1AoLyYzEwv2yh&sz=w1000"
+alt="Sillón">
+
+<div class="samher-product-info">
+
+<small>SILLONES</small>
+
+<h3>Comodidad con estilo</h3>
+
+<p>
+Sillones diseñados para darle
+carácter y confort a tus espacios.
+</p>
+
+<a
+class="samher-btn samher-gold"
+href="https://wa.me/573241138293?text=Hola%20SAMHER,%20me%20interesan%20los%20sillones."
+target="_blank">
+
+Consultar
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- SALA L -->
+
+<article class="samher-product">
+
+<img
+class="samher-product-img"
+src="https://drive.google.com/thumbnail?id=19skHnuUZ4EZwwPG7WKwh6P_dJrqeY2xm&sz=w1000"
+alt="Juego de sala en L">
+
+<div class="samher-product-info">
+
+<small>SALA EN L</small>
+
+<h3>Más espacio para compartir</h3>
+
+<p>
+Una opción moderna para aprovechar
+cada rincón de tu sala.
+</p>
+
+<a
+class="samher-btn samher-gold"
+href="https://wa.me/573241138293?text=Hola%20SAMHER,%20me%20interesa%20la%20sala%20en%20L."
+target="_blank">
+
+Consultar
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- OTRO JUEGO -->
+
+<article class="samher-product">
+
+<img
+class="samher-product-img"
+src="https://drive.google.com/thumbnail?id=17iJc7-rg_B2UzsguZ1VLIPGtCq0I-1x_&sz=w1000"
+alt="Juego de sala">
+
+<div class="samher-product-info">
+
+<small>JUEGO DE SALA</small>
+
+<h3>Tu sala, tu estilo</h3>
+
+<p>
+Diseños pensados para crear espacios
+cómodos, modernos y acogedores.
+</p>
+
+<a
+class="samher-btn samher-gold"
+href="https://wa.me/573241138293?text=Hola%20SAMHER,%20me%20interesa%20este%20juego%20de%20sala."
+target="_blank">
+
+Consultar
+
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     CATEGORÍAS
+============================== -->
+
+<section class="samher-section">
+
+<div class="samher-container">
+
+<div class="samher-title">
+
+<small>MUCHO MÁS QUE SALAS</small>
+
+<h2>Todo para tu hogar</h2>
+
+<p>
+Encuentra lo que necesitas para transformar tu espacio.
+</p>
+
+</div>
+
+
+<div class="samher-categories">
+
+
+<div class="samher-category">
+<div class="samher-category-icon">🛋️</div>
+<h3>Salas</h3>
+<p>Modernas y cómodas</p>
+</div>
+
+
+<div class="samher-category">
+<div class="samher-category-icon">🛏️</div>
+<h3>Somieres</h3>
+<p>Para descansar mejor</p>
+</div>
+
+
+<div class="samher-category">
+<div class="samher-category-icon">🌙</div>
+<h3>Colchones</h3>
+<p>Descanso de calidad</p>
+</div>
+
+
+<div class="samher-category">
+<div class="samher-category-icon">🪑</div>
+<h3>Sillones</h3>
+<p>Diseño y confort</p>
+</div>
+
+
+<div class="samher-category">
+<div class="samher-category-icon">✨</div>
+<h3>Personalizados</h3>
+<p>Tu idea hecha realidad</p>
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     SERVICIOS
+============================== -->
+
+<section class="samher-section">
+
+<div class="samher-container">
+
+<div class="samher-title">
+
+<small>TAMBIÉN PODEMOS AYUDARTE</small>
+
+<h2>Más que vender muebles</h2>
+
+<p>
+Creamos soluciones para que tu hogar sea exactamente como lo imaginas.
+</p>
+
+</div>
+
+
+<div class="samher-services">
+
+
+<div class="samher-service">
+
+<div class="samher-service-icon">
+♻️
+</div>
+
+<h3>
+Restauración de muebles
+</h3>
+
+<p>
+¿Ya tienes un mueble pero necesita una renovación?
+Podemos ayudarte a restaurarlo, renovarlo y devolverle
+una nueva vida.
+</p>
+
+<a
+class="samher-btn samher-gold"
+href="https://wa.me/573241138293?text=Hola%20SAMHER,%20quiero%20restaurar%20un%20mueble."
+target="_blank">
+
+Cotizar restauración
+
+</a>
+
+</div>
+
+
+<div class="samher-service">
+
+<div class="samher-service-icon">
+✏️
+</div>
+
+<h3>
+Diseños personalizados
+</h3>
+
+<p>
+¿Tienes un diseño en mente?
+Cuéntanos cómo lo imaginas y hagamos realidad
+ese mueble que tienes en la cabeza.
+</p>
+
+<a
+class="samher-btn samher-gold"
+href="https://wa.me/573241138293?text=Hola%20SAMHER,%20tengo%20un%20dise%C3%B1o%20en%20mente."
+target="_blank">
+
+Tengo una idea
+
+</a>
+
+</div>
+
+
+<div class="samher-service">
+
+<div class="samher-service-icon">
+🛏️
+</div>
+
+<h3>
+Somieres & Colchones
+</h3>
+
+<p>
+Renueva tu espacio de descanso con nuestras
+opciones de somieres y colchones.
+</p>
+
+<a
+class="samher-btn samher-gold"
+href="https://wa.me/573241138293?text=Hola%20SAMHER,%20quiero%20informacion%20sobre%20somieres%20y%20colchones."
+target="_blank">
+
+Consultar
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     IDEA
+============================== -->
+
+<section class="samher-idea">
+
+<div class="samher-container">
+
+<div class="samher-kicker">
+¿TIENES UN DISEÑO EN MENTE?
+</div>
+
+<h2>
+Tu idea.<br>
+Nuestro trabajo.<br>
+Un mueble único.
+</h2>
+
+<p>
+No importa si tienes una foto, un dibujo o simplemente
+una idea. Cuéntanos qué imaginas y trabajaremos contigo
+para convertirlo en una pieza que realmente se sienta tuya.
+</p>
+
+<a
+class="samher-btn samher-green"
+href="https://wa.me/573241138293?text=Hola%20SAMHER,%20tengo%20una%20idea%20para%20un%20mueble%20y%20quiero%20hacerla%20realidad."
+target="_blank">
+
+💬 Cuéntanos tu idea
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     FOOTER
+============================== -->
+
+<footer class="samher-footer">
+
+<div class="samher-footer-name">
+SAMHER
+</div>
+
+<div>
+Muebles & Hogar
+</div>
+
+<div style="margin-top:8px">
+✓ Pago contra entrega
+</div>
+
+<div style="margin-top:8px">
+WhatsApp: <strong>324 113 8293</strong>
+</div>
+
+<div style="margin-top:15px">
+© 2026 SAMHER · Todos los derechos reservados
+</div>
+
+</footer>
+
+  </div>
